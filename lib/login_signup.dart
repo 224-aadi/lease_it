@@ -3,6 +3,9 @@ import 'package:lease_it/login.dart';
 import 'package:lease_it/sign_up.dart';
 
 class LoginSignup extends StatefulWidget {
+  const LoginSignup({Key? key}) : super(key: key);
+
+  @override
   _loginSignup createState() => _loginSignup();
 }
 

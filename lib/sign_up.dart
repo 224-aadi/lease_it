@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:lease_it/Init_profile.dart';
 
 class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
+
+  @override
   _signUp createState() => _signUp();
 }
 
@@ -44,7 +48,8 @@ class _signUp extends State<SignUp> {
       }
 
       // You can now navigate to home screen:
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => InitProfile()));
     } on FirebaseAuthException catch (e) {
       showDialog(
         context: context,

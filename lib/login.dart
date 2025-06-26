@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:lease_it/main_navigation.dart';
 
 class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
+
+  @override
   _login createState() => _login();
 }
 
@@ -43,8 +47,9 @@ class _login extends State<Login> {
             .createUserWithEmailAndPassword(email: email, password: password);
       }
 
-      // You can now navigate to home screen:
-      Navigator.pushReplacementNamed(context, '/home');
+      // You can now navigate to main navigation:
+      Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => const MainNavigation()));
     } on FirebaseAuthException catch (e) {
       showDialog(
         context: context,
